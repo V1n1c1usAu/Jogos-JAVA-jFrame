@@ -15,7 +15,7 @@ public class JogoDaVelha extends javax.swing.JFrame {
     private int jogadaAtual;
 
     /**
-     * Creates new form JogoDaVelha
+     * Creates new form JogoDaVelhaaaaaaa
      */
     public JogoDaVelha() {
         initComponents();
