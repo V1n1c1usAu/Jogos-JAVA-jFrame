@@ -8,6 +8,7 @@ package JogoDaMemoria;
 import java.util.ArrayList;
 import java.util.Random;
 import javax.swing.JButton;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -172,10 +173,20 @@ public final class JogoDaMemoria extends javax.swing.JFrame {
                 backup = -1;
             } else {
 
-                btns.get(indice).setText("");
-                btns.get(backup).setText("");
+                btns.get(indice).setText(figuras[linha][coluna]);
 
-                backup = -1;
+                SwingUtilities.invokeLater(() -> {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        System.out.println("Erro: " + e.getMessage());
+                    }
+
+                    btns.get(indice).setText("");
+                    btns.get(backup).setText("");
+
+                    backup = -1;
+                });
 
             }
             atualizarJogada();
