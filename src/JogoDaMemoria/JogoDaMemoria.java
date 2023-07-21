@@ -173,14 +173,14 @@ public final class JogoDaMemoria extends javax.swing.JFrame {
                 backup = -1;
             } else {
 
-                try {
-                    btns.get(indice).setText("" + indice);
-                    Thread.sleep(10000);
-                } catch (InterruptedException e) {
-                    System.out.println("Erro: " + e.getMessage());
-                }
+                btns.get(indice).setText(figuras[linha][coluna]);
 
                 SwingUtilities.invokeLater(() -> {
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        System.out.println("Erro: " + e.getMessage());
+                    }
 
                     btns.get(indice).setText("");
                     btns.get(backup).setText("");
